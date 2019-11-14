@@ -10,7 +10,7 @@ namespace GamePlayer
     {
         static void Main(string[] args)
         {
-            IGame game = new HanoiGame();
+            IGame game = new GuessGame();
             game.Setup();
             game.Play();
             Console.ReadKey();
