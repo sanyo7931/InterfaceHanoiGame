@@ -17,7 +17,6 @@ namespace GamePlayer
             //Console.WriteLine($"你輸入的最大範圍是{max}");
             while (true)  //game loop 
             {
-                int counttime=0;
                 //離開條件 
                 if (input == guess)
                 {
