@@ -8,17 +8,36 @@ namespace GamePlayer
 {
     public class GuessGame : IGame
     {
-        int max = 0;
+        int guess;
+        int input;
         public void Play()
         {
-            Console.WriteLine($"你輸入的最大範圍是{max}");
+            guess = new Random().Next(100);
+
+            //Console.WriteLine($"你輸入的最大範圍是{max}");
+            while (true)  //game loop 
+            {
+                int counttime=0;
+                //離開條件 
+                if (input == guess)
+                {
+                    Console.WriteLine("恭喜你答對了!");
+                    break;
+                }
+                //提示
+                Console.WriteLine("猜錯了，再來一次！");
+                Setup();
+            }
+
+            Console.WriteLine("PAUSE");
         }
 
         public void Setup()
         {
-            Console.WriteLine("請輸入範圍:");
-            string input = Console.ReadLine();
-            max = int.Parse(input);
+            //決定輸入內容
+            Console.WriteLine("請輸入一個數字(0-100):");
+            string input_str = Console.ReadLine();  //input  string 
+            input = int.Parse(input_str);
         }
     }
 }

@@ -10,7 +10,22 @@ namespace GamePlayer
     {
         static void Main(string[] args)
         {
-            IGame game = new GuessGame();
+            IGame game = null;
+
+            Console.WriteLine("選擇遊戲1:Hanoi or 2:Guess");
+            string input_string = Console.ReadLine();
+            int input = int.Parse(input_string);
+
+            switch(input)
+            {
+                case 1:
+                    game = new HanoiGame();
+                    break;
+                case 2:
+                    game = new GuessGame();
+
+                    break;
+            }
             game.Setup();
             game.Play();
             Console.ReadKey();
